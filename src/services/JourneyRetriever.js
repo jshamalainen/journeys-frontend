@@ -16,9 +16,8 @@ class JourneyRetriever extends React.Component {
       }
     }
   
-    handleJourneysClick = () => axios(BACKEND_BASE_URL + '/journeys/')
-                        .then(resp => this.setState(state =>  ({ ...state, "journeys": resp.data })))
-  
+    // HERE: Implement click handler for "Get journeys" Button.                     
+    
     handleStationClick = (journey_id) => axios(BACKEND_BASE_URL + '/journeys/' + journey_id)
                                             .then(resp => this.setState({...this.state, "selected_journey": resp.data}))
   
@@ -28,7 +27,7 @@ class JourneyRetriever extends React.Component {
           {this.state.journeys.length > 0 &&
             <JourneyListing label = 'Journeys available' journeys = {this.state.journeys} onClick = {this.handleStationClick} />
           }
-          <Button label = 'Get journeys' onClick={this.handleJourneysClick}/>
+          <Button label = 'Get journeys' />
           {this.state.selected_journey != null &&
           <JourneyDetails selected_journey = {this.state.selected_journey} />
           }

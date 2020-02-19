@@ -10,11 +10,7 @@ class JourneyDetails extends React.Component {
 
   render() {
     return(
-      <div className='StyledJourneyDetails'>
-        <JourneyDetailsRow label = 'From station: ' content = {this.props.selected_journey.from}/>
-        <JourneyDetailsRow label = 'To station: ' content = {this.props.selected_journey.to}/>
-        <JourneyDetailsRow label = 'Train type: ' content = {this.props.selected_journey.train}/>
-      </div>
+      <div className='StyledJourneyDetails'></div>
     ) 
   }
  }
